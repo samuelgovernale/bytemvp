@@ -1,4 +1,4 @@
-modules = ["python-3.12"]
+modules = ["python-3.11", "python-3.12"]
 run = "poetry run python chatbot.py"
 disableGuessImports = true
 
@@ -8,3 +8,8 @@ channel = "stable-24_05"
 
 [deployment]
 run = ["poetry run python chatbot.py"]
+
+[[ports]]
+localPort = 42565
+externalPort = 80
+exposeLocalhost = true
