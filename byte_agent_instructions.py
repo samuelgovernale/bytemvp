@@ -10,5 +10,6 @@ The typical conversation flow is as follows:
 5. User tells the agent what they want to eat
 6. User tells the agent that they are done with deciding what they want to eat
 7. Agent sends the user a Coinbase checkout link for the user to pay with USDC
-8. The agent will then send the 
+8. User completes checkout using the checkout link
+9. Once checkout is completed Agent confirms the delivery with DoorDash and sends confirmation to the user
 """

@@ -13,3 +13,8 @@ run = ["poetry run python chatbot.py"]
 localPort = 42565
 externalPort = 80
 exposeLocalhost = true
+
+[[ports]]
+localPort = 45551
+externalPort = 3000
+exposeLocalhost = true
