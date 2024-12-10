@@ -12,7 +12,6 @@ from langgraph.prebuilt import create_react_agent
 from cdp_langchain.agent_toolkits import CdpToolkit
 from cdp_langchain.utils import CdpAgentkitWrapper
 from cdp_langchain.tools import CdpTool
-from pydantic import BaseModel, Field
 from cdp import *
 
 from byte_agent_instructions import BYTE_AGENT_INSTRUCTIONS
@@ -58,8 +57,7 @@ def initialize_agent():
         llm,
         tools=tools,
         checkpointer=memory,
-        state_modifier=
-        f"{BYTE_AGENT_INSTRUCTIONS}",
+        state_modifier=f"{BYTE_AGENT_INSTRUCTIONS}",
     ), config
 
 
@@ -142,8 +140,3 @@ def main():
         run_chat_mode(agent_executor=agent_executor, config=config)
     elif mode == "auto":
         run_autonomous_mode(agent_executor=agent_executor, config=config)
-
-
-if __name__ == "__main__":
-    print("Starting Agent...")
-    main()

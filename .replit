@@ -1,5 +1,5 @@
 modules = ["python-3.11", "python-3.12"]
-run = "poetry run python chatbot.py"
+run = "poetry run python main.py --mode telegram"
 disableGuessImports = true
 
 
@@ -7,7 +7,7 @@ disableGuessImports = true
 channel = "stable-24_05"
 
 [deployment]
-run = ["poetry run python chatbot.py"]
+run = ["poetry run python main.py --mode telegram"]
 
 [[ports]]
 localPort = 36101
