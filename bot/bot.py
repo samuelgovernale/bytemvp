@@ -18,15 +18,13 @@ TOKEN = os.environ.get(TELEGRAM_TOKEN_KEY)
 if not TOKEN:
     raise ValueError(f"{TELEGRAM_BOT_TOKEN} environment variable not set.")
 
-agent_executor = None
-config = None
+user_sessions = {}
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Send a message when the command /start is issued."""
 
-    global agent_executor, config
-    agent_executor, config = initialize_agent()
+    user_sessions[update.effective_user.id] = initialize_agent()
     text = "Hello! I'm your friendly AI assistant. What can I help you with?"
 
     await update.message.reply_text(text)
@@ -36,7 +34,11 @@ async def handle_message(update: Update,
                          context: ContextTypes.DEFAULT_TYPE) -> None:
     """Process incoming messages."""
 
-    global agent_executor, config
+    if update.effective_user.id not in user_sessions:
+        await update.message.reply_text("Please type /start to begin.")
+        return
+
+    agent_executor, config = user_sessions.get(update.effective_user.id)
     user_input = update.message.text
 
     message = await update.message.reply_text("Thinking...")
