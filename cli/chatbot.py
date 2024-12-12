@@ -20,7 +20,7 @@ from byte_agent_instructions import BYTE_AGENT_INSTRUCTIONS
 wallet_data_file = "wallet_data.txt"
 
 
-def initialize_agent():
+def initialize_agent(context: dict = {}):
     """Initialize the agent with CDP Agentkit."""
     # Initialize LLM.
     llm = ChatOpenAI(model="gpt-4o-mini")
@@ -45,7 +45,7 @@ def initialize_agent():
         f.write(wallet_data)
 
     # Initialize CDP Agentkit Toolkit and get tools.
-    cdp_toolkit = CdpToolkit.from_cdp_agentkit_wrapper(agentkit)
+    cdp_toolkit = CdpToolkit.from_cdp_agentkit_wrapper(context, agentkit)
     tools = cdp_toolkit.get_tools()
 
     # Store buffered conversation history in memory.
