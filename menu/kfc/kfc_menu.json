@@ -1,0 +1,50 @@
+{
+    "menuItems": [
+      {
+        "name": "Classic Chicken Sandwich Combo",
+        "description": "Includes KFC Chicken Sandwich with Extra Crispy™ chicken, pickles, and Colonel's mayo on a bun, a side, and a medium drink.",
+        "calories": "660-1240",
+        "price": 8.69,
+        "image": "images/kfc-cknsndcombo.jpg",
+        "components": {
+          "mainItem": {
+            "name": "KFC Chicken Sandwich - Classic",
+            "calories": "590-670",
+            "quantity": 1
+          },
+          "side": {
+            "name": "Secret Recipe Fries",
+            "quantity": 1
+          },
+          "drink": {
+            "size": "Medium",
+            "quantity": 1
+          }
+        },
+        "quantity": 1
+      },
+      {
+        "name": "Spicy Chicken Sandwich Combo",
+        "description": "Includes KFC Spicy Chicken Sandwich with Extra Crispy™ spicy chicken, pickles, and spicy mayo on a bun, a side, and a medium drink.",
+        "calories": "680-1260",
+        "price": 8.99,
+        "image": "images/kfc-spcknsndcombo.jpg",
+        "components": {
+          "mainItem": {
+            "name": "KFC Chicken Sandwich - Spicy",
+            "calories": "610-690",
+            "quantity": 1
+          },
+          "side": {
+            "name": "Waffle Fries",
+            "quantity": 1
+          },
+          "drink": {
+            "size": "Medium",
+            "quantity": 1
+          }
+        },
+        "quantity": 1
+      }
+    ]
+  }  
